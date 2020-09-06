@@ -18,7 +18,7 @@ dtm <- tm::DocumentTermMatrix(corpus)
 dtm.tfidf <- tm::weightTfIdf(dtm)
 
 # remove features for optimization
-dtm.tfidf <- tm::removeSparseTerms(dtm.tfidf, 0.99)
+dtm.tfidf <- tm::removeSparseTerms(dtm.tfidf, 0.999)
 
 # There is the memory-problem part
 # - Native matrix isn't "sparse-compliant" in the memory
@@ -26,7 +26,7 @@ dtm.tfidf <- tm::removeSparseTerms(dtm.tfidf, 0.99)
 matrix.tfidf <- as.matrix(dtm.tfidf)
 
 # cluster descriptions according to similarity
-n_clusters = prototype_size/50
+n_clusters = 500
 clustering.kmeans <- kmeans(matrix.tfidf, n_clusters)
 Clusters <- clustering.kmeans$cluster
 
