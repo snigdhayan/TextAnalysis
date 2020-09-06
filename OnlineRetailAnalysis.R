@@ -44,6 +44,6 @@ detach(myDataFrame_cluster)
 hist(Clusters)
 
 # print observations belonging to 10 random clusters
-for (i in sample(c(1:n_clusters),10)) {
+for (i in sample(c(1:n_clusters),5)) {
   print(clustered_descriptions[clustered_descriptions$Cluster==i,])
 }
