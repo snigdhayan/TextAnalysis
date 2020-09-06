@@ -26,7 +26,7 @@ dtm.tfidf <- tm::removeSparseTerms(dtm.tfidf, 0.99)
 matrix.tfidf <- as.matrix(dtm.tfidf)
 
 # cluster descriptions according to similarity
-n_clusters = 1000
+n_clusters = prototype_size/50
 clustering.kmeans <- kmeans(matrix.tfidf, n_clusters)
 Clusters <- clustering.kmeans$cluster
 
