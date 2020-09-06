@@ -1,3 +1,4 @@
+# load needed package - text mining package
 library(tm)
 
 # read data and preprocess data
