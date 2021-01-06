@@ -1,8 +1,8 @@
 # load needed package - text mining package
 library(tm)
 
-# read data and preprocess data
-setwd('/Users/ibatu/Documents/MyProgramsWindows/R/TextAnalysis/')
+# read and preprocess data (make sure that the dataset 'online_retail.csv' is available in the working directory)
+setwd('/Users/ibatu/Documents/MyProgramsWindows/TextAnalysis/')
 data <- read.csv(file = './online_retail.csv', header = TRUE)
 
 set.seed(123)
@@ -44,7 +44,7 @@ detach(myDataFrame_cluster)
 # histogram of cluster column
 hist(Clusters)
 
-# print observations belonging to 10 random clusters
+# print observations belonging to a few random clusters
 for (i in sample(c(1:n_clusters),5)) {
   print(clustered_descriptions[clustered_descriptions$Cluster==i,])
 }
