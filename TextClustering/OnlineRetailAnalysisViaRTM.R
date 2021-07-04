@@ -2,7 +2,7 @@
 library(tm)
 
 # read and preprocess data (make sure that the dataset 'online_retail.csv' is available in the working directory)
-setwd('/Users/ibatu/Documents/MyProgramsWindows/Repositories/TextAnalysis/')
+setwd('C:/Users/mathm/Documents/MyProgramsWindows/Repositories/TextAnalysis/TextClustering/')
 data <- read.csv(file = './online_retail.csv', header = TRUE)
 
 set.seed(123)
