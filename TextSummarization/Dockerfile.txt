@@ -1,0 +1,18 @@
+# set base image
+FROM jupyter/pyspark-notebook:python-3.8.8
+
+# image description
+LABEL name="Container image with Jupyter Notebook and Spark NLP"
+
+# set the working directory in the container
+WORKDIR /TextSummarization
+
+# copy the dependencies file to the working directory
+COPY requirements.txt .
+
+# install dependencies
+RUN pip3 install -U pip
+RUN pip3 install -r requirements.txt
+
+# copy a local directory into the container
+COPY ./TextSummarization ./TextSummarization
